@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfgeo75772jby"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_48mrw"]
+[ext_resource type="Texture2D" uid="uid://6f23bsql82lp" path="res://Assets/Backgrounds/Main_menu_background.png" id="1_uxldc"]
+[ext_resource type="Texture2D" uid="uid://bb7255h7lq4o3" path="res://Assets/Menu items/start_button.tres" id="3_03oig"]
+[ext_resource type="Texture2D" uid="uid://bfwx20xt02uqp" path="res://Assets/Menu items/quit_button.tres" id="4_32s1k"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_48mrw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 647.0
+texture = ExtResource("1_uxldc")
+expand_mode = 2
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 382.0
+offset_top = 262.0
+offset_right = 675.0
+offset_bottom = 349.0
+
+[node name="TextureRect" type="TextureRect" parent="StartButton"]
+layout_mode = 0
+offset_right = 327.0
+offset_bottom = 97.0
+texture = ExtResource("3_03oig")
+expand_mode = 2
+
+[node name="QuitButton" type="TextureButton" parent="."]
+offset_left = 384.0
+offset_top = 392.0
+offset_right = 711.0
+offset_bottom = 479.0
+
+[node name="TextureRect" type="TextureRect" parent="QuitButton"]
+layout_mode = 0
+offset_right = 327.0
+offset_bottom = 97.0
+texture = ExtResource("4_32s1k")
+expand_mode = 2
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
