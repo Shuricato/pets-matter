@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://co01gf0jpivod"]
+
+[ext_resource type="Texture2D" uid="uid://cwmkgpqvlj2yc" path="res://Assets/Office items/Gamewindow05.png" id="1_cfxsi"]
+
+[resource]
+atlas = ExtResource("1_cfxsi")
+region = Rect2(951.5862, 0, 1780.4138, 317.27588)

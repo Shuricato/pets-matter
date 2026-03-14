@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://dklqhiwsqmrf"]
+
+[ext_resource type="Script" uid="uid://cu17qnx8re600" path="res://office.gd" id="1_n8ipj"]
+[ext_resource type="Texture2D" uid="uid://c2gj3sccqy6b6" path="res://Assets/Backgrounds/Vet_office_background.png" id="1_ua801"]
+[ext_resource type="Texture2D" uid="uid://d1yls1k3sr6wi" path="res://Assets/Office items/Table.tres" id="2_ei0gw"]
+[ext_resource type="Texture2D" uid="uid://co01gf0jpivod" path="res://Assets/Office items/Icon tray.tres" id="3_n8ipj"]
+[ext_resource type="Texture2D" uid="uid://bi3m5igp8mf8w" path="res://Assets/Office items/Aminal.tres" id="4_ttk34"]
+[ext_resource type="Texture2D" uid="uid://djfjmyjuypr67" path="res://Assets/Office items/Button1.tres" id="5_knk1q"]
+[ext_resource type="Texture2D" uid="uid://c2ro2hm8clri0" path="res://Assets/Office items/Button3.tres" id="6_43i68"]
+[ext_resource type="Texture2D" uid="uid://b0b23nqlhvb2i" path="res://Assets/Office items/Button4.tres" id="7_kjhbo"]
+[ext_resource type="Texture2D" uid="uid://cq88mptee68a5" path="res://Assets/Office items/Button5.tres" id="8_4fm71"]
+[ext_resource type="Texture2D" uid="uid://c7vs3yr3lt7fu" path="res://Assets/Office items/Button2.tres" id="9_yauhp"]
+
+[node name="Office" type="Node2D"]
+script = ExtResource("1_n8ipj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ua801")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 1.0
+offset_top = 415.0
+offset_right = 1151.0
+offset_bottom = 648.0
+texture = ExtResource("2_ei0gw")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 654.0
+offset_right = 1152.0
+offset_bottom = 106.0
+texture = ExtResource("3_n8ipj")
+expand_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(536.00006, 324.00003)
+scale = Vector2(0.27896723, 0.2526631)
+texture = ExtResource("4_ttk34")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 668.0
+offset_top = 1.0
+offset_right = 756.0
+offset_bottom = 96.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 91.0
+texture = ExtResource("5_knk1q")
+expand_mode = 2
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 844.0
+offset_top = -1.0
+offset_right = 932.0
+offset_bottom = 94.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton3"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 86.0
+offset_bottom = 84.0
+texture = ExtResource("6_43i68")
+expand_mode = 2
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = 930.0
+offset_top = 1.0
+offset_right = 1018.0
+offset_bottom = 96.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton4"]
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 84.0
+texture = ExtResource("7_kjhbo")
+expand_mode = 2
+
+[node name="TextureButton5" type="TextureButton" parent="."]
+offset_left = 1017.0
+offset_top = -1.0
+offset_right = 1105.0
+offset_bottom = 94.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton5"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 91.0
+texture = ExtResource("8_4fm71")
+expand_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 755.0
+offset_top = -1.0
+offset_right = 843.0
+offset_bottom = 94.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton2"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 91.0
+texture = ExtResource("9_yauhp")
+expand_mode = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
