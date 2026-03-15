@@ -1,18 +1,7 @@
 extends Node2D
 
-class Animal:
-	var id
-	var injuries: Array = []
-
-	func _init() -> void:
-		#Possible max of 3 injuries per animal
-		var injury_count = randi_range(1,3)
-		for i in injury_count:
-			#4 possible types of injuries, no duplicates
-			var injury_id = randi_range(0,3)
-			if !injuries.has(injury_id):
-				injuries.append(injury_id)
-var animal = Animal.new()
+var Dog = preload("res://Dog.tscn")
+var new_dog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +11,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_texture_button_pressed() -> void:
-	if animal.injuries.has(0):
-		print("Correct treatment")
+func _on_dog_pressed() -> void:
+	new_dog = Dog.instantiate()
+	add_child(new_dog)
+	
+	new_dog.position = Vector2(555, 292)
+	new_dog.z_index = 2
+	new_dog.scale = Vector2(0.4,0.4)
+
+func _on_treat_pressed() -> void:
+	print("Remove pressed")
+	var response = new_dog._remove_injury(0)
+	print(response)
+
+func _on_ear_pressed() -> void:
+	print("Remove pressed")
+	var response = new_dog._remove_injury(1)
+	print(response)
+
+func _on_eye_pressed() -> void:
+	print("Remove pressed")
+	var response = new_dog._remove_injury(2)
+	print(response)
+
+func _on_abrasion_pressed() -> void:
+	print("Remove pressed")
+	var response = new_dog._remove_injury(3)
+	print(response)

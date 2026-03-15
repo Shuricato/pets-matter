@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0e7haoh8l1n"
-path="res://.godot/imported/Gamewindow07.png-50af76917ea3a420093b09b92240cc49.ctex"
+uid="uid://sbtwnhraryhs"
+path="res://.godot/imported/dog_injuries.png-4ba8945321c55a7190c753a586535af0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Office items/Gamewindow07.png"
-dest_files=["res://.godot/imported/Gamewindow07.png-50af76917ea3a420093b09b92240cc49.ctex"]
+source_file="res://Assets/Animals/Dog/dog_injuries.png"
+dest_files=["res://.godot/imported/dog_injuries.png-4ba8945321c55a7190c753a586535af0.ctex"]
 
 [params]
 

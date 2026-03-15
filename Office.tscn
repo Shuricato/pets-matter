@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dklqhiwsqmrf"]
+[gd_scene load_steps=10 format=3 uid="uid://dklqhiwsqmrf"]
 
 [ext_resource type="Script" uid="uid://cu17qnx8re600" path="res://office.gd" id="1_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://c2gj3sccqy6b6" path="res://Assets/Backgrounds/Vet_office_background.png" id="1_ua801"]
 [ext_resource type="Texture2D" uid="uid://d1yls1k3sr6wi" path="res://Assets/Office items/Table.tres" id="2_ei0gw"]
 [ext_resource type="Texture2D" uid="uid://co01gf0jpivod" path="res://Assets/Office items/Icon tray.tres" id="3_n8ipj"]
-[ext_resource type="Texture2D" uid="uid://bi3m5igp8mf8w" path="res://Assets/Office items/Aminal.tres" id="4_ttk34"]
 [ext_resource type="Texture2D" uid="uid://djfjmyjuypr67" path="res://Assets/Office items/Button1.tres" id="5_knk1q"]
 [ext_resource type="Texture2D" uid="uid://c2ro2hm8clri0" path="res://Assets/Office items/Button3.tres" id="6_43i68"]
 [ext_resource type="Texture2D" uid="uid://b0b23nqlhvb2i" path="res://Assets/Office items/Button4.tres" id="7_kjhbo"]
@@ -35,12 +34,6 @@ offset_right = 1152.0
 offset_bottom = 106.0
 texture = ExtResource("3_n8ipj")
 expand_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(536.00006, 324.00003)
-scale = Vector2(0.27896723, 0.2526631)
-texture = ExtResource("4_ttk34")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 668.0
@@ -114,4 +107,43 @@ offset_bottom = 91.0
 texture = ExtResource("9_yauhp")
 expand_mode = 2
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Button" type="Button" parent="."]
+offset_left = 23.0
+offset_top = 196.0
+offset_right = 135.0
+offset_bottom = 256.0
+text = "Add Dog"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 268.0
+offset_right = 134.0
+offset_bottom = 332.0
+text = "Treat paw"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 349.0
+offset_right = 115.0
+offset_bottom = 422.0
+text = "Treat ear"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 434.0
+offset_right = 118.0
+offset_bottom = 507.0
+text = "Treat eye"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 100.0
+offset_right = 136.0
+offset_bottom = 173.0
+text = "Treat abrasion"
+
+[connection signal="pressed" from="Button" to="." method="_on_dog_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_treat_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_ear_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_eye_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_abrasion_pressed"]
