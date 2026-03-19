@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pets matter"
-run/main_scene="res://Main menu.tscn"
+run/main_scene="uid://dklqhiwsqmrf"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

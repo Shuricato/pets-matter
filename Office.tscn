@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dklqhiwsqmrf"]
+[gd_scene load_steps=11 format=3 uid="uid://dklqhiwsqmrf"]
 
 [ext_resource type="Script" uid="uid://cu17qnx8re600" path="res://office.gd" id="1_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://c2gj3sccqy6b6" path="res://Assets/Backgrounds/Vet_office_background.png" id="1_ua801"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0b23nqlhvb2i" path="res://Assets/Office items/Button4.tres" id="7_kjhbo"]
 [ext_resource type="Texture2D" uid="uid://cq88mptee68a5" path="res://Assets/Office items/Button5.tres" id="8_4fm71"]
 [ext_resource type="Texture2D" uid="uid://c7vs3yr3lt7fu" path="res://Assets/Office items/Button2.tres" id="9_yauhp"]
+[ext_resource type="PackedScene" uid="uid://bem8koarhs2p3" path="res://Guidebook.tscn" id="10_n8ipj"]
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_n8ipj")
@@ -141,6 +142,12 @@ offset_top = 100.0
 offset_right = 136.0
 offset_bottom = 173.0
 text = "Treat abrasion"
+
+[node name="Guidebook" parent="." instance=ExtResource("10_n8ipj")]
+offset_left = 1154.0
+offset_top = 125.0
+offset_right = 1154.0
+offset_bottom = 125.0
 
 [connection signal="pressed" from="Button" to="." method="_on_dog_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_treat_pressed"]

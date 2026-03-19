@@ -15,7 +15,7 @@ func _on_dog_pressed() -> void:
 	new_dog = Dog.instantiate()
 	add_child(new_dog)
 	
-	new_dog.position = Vector2(555, 292)
+	new_dog.position = Vector2(510, 300)
 	new_dog.z_index = 2
 	new_dog.scale = Vector2(0.4,0.4)
 

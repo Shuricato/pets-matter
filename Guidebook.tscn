@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://bem8koarhs2p3"]
+
+[ext_resource type="Texture2D" uid="uid://bprqkrn2ax61d" path="res://Assets/Menu items/Arrow.tres" id="1_mykmv"]
+[ext_resource type="Script" uid="uid://cy8yiy02kbdwg" path="res://guidebook.gd" id="1_nai0m"]
+
+[sub_resource type="Animation" id="Animation_x5s8b"]
+resource_name = "slide_in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-550, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3rty8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ai1a"]
+_data = {
+&"RESET": SubResource("Animation_3rty8"),
+&"slide_in": SubResource("Animation_x5s8b")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nai0m"]
+bg_color = Color(0.3529412, 0.48235294, 0.6392157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nai0m"]
+
+[node name="Guidebook" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nai0m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1ai1a")
+}
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 0.19000244
+offset_right = 539.19
+offset_bottom = 482.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nai0m")
+
+[node name="TabContainer" type="TabContainer" parent="Control/Panel"]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nai0m")
+current_tab = 0
+
+[node name="Dog" type="Control" parent="Control/Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/TabContainer/Dog"]
+layout_mode = 0
+offset_left = 24.809998
+offset_top = 16.0
+offset_right = 511.81
+offset_bottom = 291.0
+bbcode_enabled = true
+text = "[b]Bold text[/b]
+[i]Italic text[/i]
+[color=red]Red text[/color]
+[color=#ff8800]Hex color[/color]
+[font_size=24]Big text[/font_size]
+[center]Centered[/center]
+[right]Right aligned[/right]
+[u]Underlined[/u]
+[s]Strikethrough[/s]
+[code]Monospace[/code]"
+
+[node name="Cat" type="Control" parent="Control/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Cockatiel" type="Control" parent="Control/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 481.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/TextureButton"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 73.0
+offset_right = 49.0
+offset_bottom = 360.0
+texture = ExtResource("1_mykmv")
+expand_mode = 4
+
+[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]
