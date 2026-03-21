@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://u4pl1w2io4st"]
+
+[ext_resource type="Texture2D" uid="uid://cpo1aivrb3yqg" path="res://Assets/Animals/Cat/Obesity.png" id="1_ulgen"]
+
+[resource]
+atlas = ExtResource("1_ulgen")
+region = Rect2(932.526, 516.717, 648.436, 728.842)

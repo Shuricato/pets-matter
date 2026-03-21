@@ -1,36 +1,34 @@
 [gd_scene load_steps=7 format=3 uid="uid://c67b6s8xsuw3d"]
 
-[ext_resource type="Texture2D" uid="uid://cuiovwxbj64ct" path="res://Assets/Animals/Dog/Dog.tres" id="1_f1nfd"]
-[ext_resource type="Script" uid="uid://3rtk5v7o26wk" path="res://dog_script.gd" id="2_iyfei"]
+[ext_resource type="Texture2D" uid="uid://bt0sil3wxn4ym" path="res://Assets/Animals/Dog/Dog_injured.tres" id="1_jh75j"]
+[ext_resource type="Script" uid="uid://3rtk5v7o26wk" path="res://Assets/Animals/Dog/dog_script.gd" id="2_iyfei"]
 [ext_resource type="Texture2D" uid="uid://yrhcrqdt3f0f" path="res://Assets/Animals/Dog/Hurt_paw.tres" id="3_cnnkt"]
 [ext_resource type="Texture2D" uid="uid://y0t6h2gl851y" path="res://Assets/Animals/Dog/Ear_infection.tres" id="4_m38ty"]
 [ext_resource type="Texture2D" uid="uid://b8mifk0bx51nl" path="res://Assets/Animals/Dog/Eye_injury.tres" id="5_7cwfj"]
 [ext_resource type="Texture2D" uid="uid://bwns4vh8dxy7n" path="res://Assets/Animals/Dog/Abrasion.tres" id="6_iph5e"]
 
 [node name="Dog" type="Sprite2D"]
-texture = ExtResource("1_f1nfd")
+texture = ExtResource("1_jh75j")
 script = ExtResource("2_iyfei")
-injury_overlay_nodes = Array[NodePath]([NodePath("Hurt paw"), NodePath("Ear infection"), NodePath("Eye injury"), NodePath("Abrasion")])
+injury_overlay_nodes = Array[NodePath]([NodePath("Hurt paw"), NodePath("Ear infection"), NodePath("Eye injury"), NodePath("Abrasion"), NodePath("Dental disease")])
 
 [node name="Hurt paw" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(198.00002, 501)
 scale = Vector2(0.9503817, 0.9848485)
 texture = ExtResource("3_cnnkt")
 
 [node name="Ear infection" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(323, -431.99997)
 scale = Vector2(0.8333333, 0.9016736)
 texture = ExtResource("4_m38ty")
 
 [node name="Eye injury" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(153, -417)
 scale = Vector2(0.9354839, 0.9411765)
 texture = ExtResource("5_7cwfj")
 
 [node name="Abrasion" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(283, 273)
 texture = ExtResource("6_iph5e")
+
+[node name="Dental disease" type="Sprite2D" parent="."]

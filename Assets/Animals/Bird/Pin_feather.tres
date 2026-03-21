@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dq70tkma0payr"]
+
+[ext_resource type="Texture2D" uid="uid://g7gwnbi4hrfe" path="res://Assets/Animals/Bird/bird_injuries.png" id="1_fxn1a"]
+
+[resource]
+atlas = ExtResource("1_fxn1a")
+region = Rect2(420, 1135.8, 74.79999, 92.3999)

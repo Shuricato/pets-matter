@@ -2,8 +2,8 @@ extends Sprite2D
 
 var injuries: Array = []
 var injured: bool = false
-var injuredSprite = preload("res://Assets/Animals/Dog/Dog_injured.tres")
-var healthySprite = preload("res://Assets/Animals/Dog/Dog.tres")
+var injuredSprite = preload("res://Assets/Animals/Bird/Bird_injured.tres")
+var healthySprite = preload("res://Assets/Animals/Bird/Bird.tres")
 
 @export var injury_overlay_nodes: Array[NodePath] = []  # Child Sprite2Ds for overlays
 
@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func _generate_injuries() -> void:
 	injuries.clear()
-	var injury_count = randi_range(1, 4)
+	var injury_count = randi_range(1, 5)
 	while injuries.size() < injury_count:
-		var injury_id = randi_range(0, 3)
+		var injury_id = randi_range(0, injuries.size()-1)
 		if !injuries.has(injury_id):
 			injuries.append(injury_id)
 	injured = true

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b25u4r6sa2n3q"]
+
+[ext_resource type="Texture2D" uid="uid://c8aji33trdcit" path="res://Assets/Animals/Cat/cat_injuries.png" id="1_8lxjs"]
+
+[resource]
+atlas = ExtResource("1_8lxjs")
+region = Rect2(945.892, 528.81, 592, 710)

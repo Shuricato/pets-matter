@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ca5eb2gtqeg6u"]
+
+[ext_resource type="Texture2D" uid="uid://ckjy4r0xxc4am" path="res://Assets/Animals/Cat/FB_ingestion.png" id="1_0lgnd"]
+
+[resource]
+atlas = ExtResource("1_0lgnd")
+region = Rect2(978, 681.7273, 58.181763, 74.54541)

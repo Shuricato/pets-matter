@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://fknv7w8s7xyq"]
+
+[ext_resource type="Texture2D" uid="uid://c7d1lma7l6xw0" path="res://Assets/Animals/Cat/Cat.tres" id="1_qs81d"]
+[ext_resource type="Script" uid="uid://dmekxnq6m5n3c" path="res://Assets/Animals/Cat/cat_script.gd" id="2_qs81d"]
+[ext_resource type="Texture2D" uid="uid://gn25bahm7mmn" path="res://Assets/Animals/Cat/Cut_paw.tres" id="3_1tpdm"]
+[ext_resource type="Texture2D" uid="uid://oybdyhapnwll" path="res://Assets/Animals/Cat/Tooth_fracture.tres" id="4_7vw31"]
+[ext_resource type="Texture2D" uid="uid://cfg8rpldnld7a" path="res://Assets/Animals/Cat/Abrasion.tres" id="5_ddx8e"]
+[ext_resource type="Texture2D" uid="uid://ca5eb2gtqeg6u" path="res://Assets/Animals/Cat/FB_ingestion.tres" id="5_qs81d"]
+[ext_resource type="Texture2D" uid="uid://u4pl1w2io4st" path="res://Assets/Animals/Cat/Obesity.tres" id="7_1tpdm"]
+
+[node name="Cat" type="Sprite2D"]
+texture = ExtResource("1_qs81d")
+script = ExtResource("2_qs81d")
+injury_overlay_nodes = Array[NodePath]([NodePath("Hurt paw"), NodePath("FB Ingestion"), NodePath("Tooth fracture"), NodePath("Abrasion"), NodePath("Obesity")])
+obesity_id = 4
+fb_ingestion_id = 1
+tooth_fracture_id = 2
+
+[node name="Obesity" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(17, -7)
+texture = ExtResource("7_1tpdm")
+
+[node name="Hurt paw" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 308)
+scale = Vector2(0.9503817, 0.9848485)
+texture = ExtResource("3_1tpdm")
+
+[node name="FB Ingestion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(171, -115.99999)
+scale = Vector2(0.8333333, 0.9016736)
+texture = ExtResource("5_qs81d")
+
+[node name="Tooth fracture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(162, -132)
+texture = ExtResource("4_7vw31")
+
+[node name="Abrasion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(216, -36)
+texture = ExtResource("5_ddx8e")
