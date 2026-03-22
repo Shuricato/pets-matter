@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c67b6s8xsuw3d"]
+[gd_scene load_steps=8 format=3 uid="uid://c67b6s8xsuw3d"]
 
 [ext_resource type="Texture2D" uid="uid://bt0sil3wxn4ym" path="res://Assets/Animals/Dog/Dog_injured.tres" id="1_jh75j"]
 [ext_resource type="Script" uid="uid://3rtk5v7o26wk" path="res://Assets/Animals/Dog/dog_script.gd" id="2_iyfei"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y0t6h2gl851y" path="res://Assets/Animals/Dog/Ear_infection.tres" id="4_m38ty"]
 [ext_resource type="Texture2D" uid="uid://b8mifk0bx51nl" path="res://Assets/Animals/Dog/Eye_injury.tres" id="5_7cwfj"]
 [ext_resource type="Texture2D" uid="uid://bwns4vh8dxy7n" path="res://Assets/Animals/Dog/Abrasion.tres" id="6_iph5e"]
+[ext_resource type="Texture2D" uid="uid://pffdg170yfox" path="res://Assets/Animals/Dog/Dental.tres" id="7_dhd6c"]
 
 [node name="Dog" type="Sprite2D"]
 texture = ExtResource("1_jh75j")
@@ -32,3 +33,5 @@ position = Vector2(283, 273)
 texture = ExtResource("6_iph5e")
 
 [node name="Dental disease" type="Sprite2D" parent="."]
+position = Vector2(186, -291)
+texture = ExtResource("7_dhd6c")

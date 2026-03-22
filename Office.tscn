@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dklqhiwsqmrf"]
+[gd_scene load_steps=14 format=3 uid="uid://dklqhiwsqmrf"]
 
 [ext_resource type="Script" uid="uid://cu17qnx8re600" path="res://office.gd" id="1_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://c2gj3sccqy6b6" path="res://Assets/Backgrounds/Vet_office_background.png" id="1_ua801"]
 [ext_resource type="Texture2D" uid="uid://d1yls1k3sr6wi" path="res://Assets/Office items/Table.tres" id="2_ei0gw"]
 [ext_resource type="Texture2D" uid="uid://co01gf0jpivod" path="res://Assets/Office items/Icon tray.tres" id="3_n8ipj"]
-[ext_resource type="Texture2D" uid="uid://djfjmyjuypr67" path="res://Assets/Office items/Button1.tres" id="6_r1f8t"]
+[ext_resource type="Texture2D" uid="uid://djfjmyjuypr67" path="res://Assets/Menu items/Buttons/Bandage.tres" id="6_r1f8t"]
+[ext_resource type="Texture2D" uid="uid://c7vs3yr3lt7fu" path="res://Assets/Menu items/Buttons/Pliers.tres" id="7_bod3d"]
+[ext_resource type="Texture2D" uid="uid://c2ro2hm8clri0" path="res://Assets/Menu items/Buttons/Ear_drops.tres" id="8_43i68"]
+[ext_resource type="Texture2D" uid="uid://b0b23nqlhvb2i" path="res://Assets/Menu items/Buttons/Eye_drops.tres" id="9_kjhbo"]
+[ext_resource type="Texture2D" uid="uid://7pntaorwfoq5" path="res://Assets/Menu items/Buttons/Corn_starch.tres" id="10_4fm71"]
 [ext_resource type="PackedScene" uid="uid://bem8koarhs2p3" path="res://Guidebook.tscn" id="10_n8ipj"]
+[ext_resource type="Texture2D" uid="uid://cvmdgvvydua81" path="res://Assets/Menu items/Buttons/Clippers.tres" id="11_yauhp"]
+[ext_resource type="Texture2D" uid="uid://bibp0hdvitgvy" path="res://Assets/Menu items/Buttons/Better_diet.tres" id="12_gisrx"]
+[ext_resource type="Texture2D" uid="uid://cq88mptee68a5" path="res://Assets/Menu items/Buttons/Forceps.tres" id="13_grpir"]
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_n8ipj")
@@ -25,13 +32,6 @@ offset_bottom = 648.0
 texture = ExtResource("2_ei0gw")
 expand_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 654.0
-offset_right = 1152.0
-offset_bottom = 106.0
-texture = ExtResource("3_n8ipj")
-expand_mode = 2
-
 [node name="Button" type="Button" parent="."]
 offset_left = 23.0
 offset_top = 196.0
@@ -39,84 +39,185 @@ offset_right = 135.0
 offset_bottom = 256.0
 text = "Add Dog"
 
-[node name="Button2" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 268.0
-offset_right = 134.0
-offset_bottom = 332.0
-text = "Treat paw"
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 349.0
-offset_right = 115.0
-offset_bottom = 422.0
-text = "Treat ear"
-
-[node name="Button4" type="Button" parent="."]
-offset_left = 14.0
-offset_top = 434.0
-offset_right = 118.0
-offset_bottom = 507.0
-text = "Treat eye"
-
-[node name="Button5" type="Button" parent="."]
-offset_left = 32.0
-offset_top = 100.0
-offset_right = 136.0
-offset_bottom = 173.0
-text = "Treat abrasion"
-
 [node name="Guidebook" parent="." instance=ExtResource("10_n8ipj")]
 offset_left = 1154.0
 offset_top = 125.0
 offset_right = 1154.0
 offset_bottom = 125.0
 
-[node name="ItemShelf" type="Container" parent="."]
+[node name="ItemShelf" type="Control" parent="."]
+visible = false
 clip_contents = true
+layout_mode = 3
+anchors_preset = 0
 offset_left = 657.0
 offset_top = 1.0
 offset_right = 1148.0
 offset_bottom = 98.0
 
+[node name="Shelf" type="TextureRect" parent="ItemShelf"]
+layout_mode = 0
+offset_right = 494.0
+offset_bottom = 99.0
+texture = ExtResource("3_n8ipj")
+expand_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="ItemShelf"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_bottom = 17
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ItemShelf/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 50
 
-[node name="TextureRect" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer"]
+[node name="Bandage" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
-texture = ExtResource("6_r1f8t")
-expand_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("6_r1f8t")
-expand_mode = 2
-
-[node name="SwapButton" type="TextureButton" parent="."]
-offset_left = 693.0
-offset_top = 32.0
-offset_right = 733.0
-offset_bottom = 72.0
-
-[node name="Label" type="Label" parent="SwapButton"]
+[node name="Bandage" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Bandage"]
 layout_mode = 0
-offset_left = -200.0
-offset_top = -96.0
-offset_right = -149.0
-offset_bottom = -73.0
-text = "Switch"
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("6_r1f8t")
+expand_mode = 2
+
+[node name="Pliers" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Pliers" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Pliers"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("7_bod3d")
+expand_mode = 2
+
+[node name="Eye drops" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Eye drops" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Eye drops"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("9_kjhbo")
+expand_mode = 2
+
+[node name="Ear drops" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Ear drops" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Ear drops"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 0
+texture = ExtResource("8_43i68")
+expand_mode = 2
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 584.0
+offset_top = 28.0
+offset_right = 634.0
+offset_bottom = 59.0
+text = "Swap"
+
+[node name="ItemShelf2" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 656.0
+offset_right = 1147.0
+offset_bottom = 97.0
+
+[node name="Shelf" type="TextureRect" parent="ItemShelf2"]
+layout_mode = 0
+offset_right = 494.0
+offset_bottom = 99.0
+texture = ExtResource("3_n8ipj")
+expand_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemShelf2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 17
+theme_override_constants/margin_bottom = 13
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemShelf2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Corn starch" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Corn starch" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Corn starch"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("10_4fm71")
+expand_mode = 2
+
+[node name="Forceps" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Forceps" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Forceps"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("13_grpir")
+expand_mode = 2
+
+[node name="Diet" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Diet" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Diet"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("12_gisrx")
+expand_mode = 2
+
+[node name="Clippers" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 69)
+layout_mode = 2
+
+[node name="Clippers" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Clippers"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("11_yauhp")
+expand_mode = 2
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 280.0
+offset_right = 138.0
+offset_bottom = 340.0
+text = "Add Cat"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 23.0
+offset_top = 113.0
+offset_right = 135.0
+offset_bottom = 173.0
+text = "Add Parrot"
 
 [connection signal="pressed" from="Button" to="." method="_on_dog_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_treat_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_ear_pressed"]
-[connection signal="pressed" from="Button4" to="." method="_on_eye_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_abrasion_pressed"]
-[connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Bandage" to="." method="_on_bandage_pressed"]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Pliers" to="." method="_on_pliers_pressed"]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Eye drops" to="." method="_on_eye_drops_pressed"]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Ear drops" to="." method="_on_ear_drops_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_swap_button_pressed"]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Corn starch" to="." method="_on_corn_starch_pressed"]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Forceps" to="." method="_on_forceps_pressed"]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Diet" to="." method="_on_diet_pressed"]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Clippers" to="." method="_on_clippers_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_cat_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_parrot_pressed"]

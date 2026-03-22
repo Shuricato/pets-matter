@@ -7,6 +7,14 @@ var healthySprite = preload("res://Assets/Animals/Dog/Dog.tres")
 
 @export var injury_overlay_nodes: Array[NodePath] = []  # Child Sprite2Ds for overlays
 
+var conditions: Dictionary = {
+	"tooth": 4,
+	"ear": 1,
+	"eye": 2,
+	"abrasion": 3,
+	"paw": 0
+}
+
 func _ready() -> void:
 	_generate_injuries()
 	_update_visuals()
@@ -21,7 +29,12 @@ func _generate_injuries() -> void:
 	injured = true
 
 #TRUE: Success at removal, FALSE: You fucked up
-func _remove_injury(injury_id: int) -> bool:
+func _remove_injury(condition_name: String) -> bool:
+	var injury_id
+	if conditions.has(condition_name):
+		injury_id = conditions[condition_name]
+	else:
+		injury_id = 5
 	if (injuries.has(injury_id)):
 		injuries.erase(injury_id)
 		if (injuries.is_empty()):
@@ -39,6 +52,8 @@ func _update_visuals() -> void:
 		texture = injuredSprite
 	else: 
 		texture = healthySprite
+		await get_tree().create_timer(4).timeout
+		_set_no_animal()
 
 func _set_no_animal() -> void:
 	self.queue_free()

@@ -4,3 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_wms3y")
+region = Rect2(288.88855, 369.93686, 57.233032, 37.268005)
