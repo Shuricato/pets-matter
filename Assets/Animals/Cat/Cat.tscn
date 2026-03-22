@@ -11,8 +11,7 @@
 [node name="Cat" type="Sprite2D"]
 texture = ExtResource("1_qs81d")
 script = ExtResource("2_qs81d")
-injury_overlay_nodes = Array[NodePath]([NodePath("Hurt paw"), NodePath("FB Ingestion"), NodePath("Tooth fracture"), NodePath("Abrasion"), NodePath("Obesity")])
-obesity_id = 4
+injury_overlay_nodes = Array[NodePath]([NodePath("Obesity"), NodePath("FB Ingestion"), NodePath("Tooth fracture"), NodePath("Abrasion"), NodePath("Hurt paw")])
 fb_ingestion_id = 1
 tooth_fracture_id = 2
 

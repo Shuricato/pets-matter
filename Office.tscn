@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2gj3sccqy6b6" path="res://Assets/Backgrounds/Vet_office_background.png" id="1_ua801"]
 [ext_resource type="Texture2D" uid="uid://d1yls1k3sr6wi" path="res://Assets/Office items/Table.tres" id="2_ei0gw"]
 [ext_resource type="Texture2D" uid="uid://co01gf0jpivod" path="res://Assets/Office items/Icon tray.tres" id="3_n8ipj"]
-[ext_resource type="Texture2D" uid="uid://djfjmyjuypr67" path="res://Assets/Office items/Button1.tres" id="5_knk1q"]
+[ext_resource type="Texture2D" uid="uid://djfjmyjuypr67" path="res://Assets/Office items/Button1.tres" id="6_r1f8t"]
 [ext_resource type="PackedScene" uid="uid://bem8koarhs2p3" path="res://Guidebook.tscn" id="10_n8ipj"]
 
 [node name="Office" type="Node2D"]
@@ -73,29 +73,32 @@ offset_top = 125.0
 offset_right = 1154.0
 offset_bottom = 125.0
 
-[node name="ItemShelf" type="PanelContainer" parent="."]
+[node name="ItemShelf" type="Container" parent="."]
 clip_contents = true
 offset_left = 657.0
 offset_top = 1.0
-offset_right = 1243.0
-offset_bottom = 278.0
+offset_right = 1148.0
+offset_bottom = 98.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ItemShelf"]
+[node name="MarginContainer" type="MarginContainer" parent="ItemShelf"]
 layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Item1" type="PanelContainer" parent="ItemShelf/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemShelf/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 4
 
-[node name="TextureRect" type="TextureRect" parent="ItemShelf/HBoxContainer/Item1"]
+[node name="TextureRect" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_knk1q")
+texture = ExtResource("6_r1f8t")
+expand_mode = 2
 
-[node name="Item2" type="PanelContainer" parent="ItemShelf/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="ItemShelf/HBoxContainer/Item2"]
-layout_mode = 2
-texture = ExtResource("5_knk1q")
+texture = ExtResource("6_r1f8t")
+expand_mode = 2
 
 [node name="SwapButton" type="TextureButton" parent="."]
 offset_left = 693.0

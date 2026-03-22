@@ -17,14 +17,26 @@ func _ready() -> void:
 func _generate_injuries() -> void:
 	injuries.clear()
 	var injury_count = randi_range(1, 5)
-	while injuries.size() < injury_count:
-		var injury_id = randi_range(0, injuries.size()-1)
-		if (injury_id == obesity_id):
-			injury_count = 1
-		if !injuries.has(injury_id):
-			injuries.append(injury_id)
-	injured = true
+	var pool = range(0, 5)
+	
+	if randi_range(0, 1) == 1:
+		injuries.append(obesity_id)
+		injured = true
+		return
 
+	pool.erase(obesity_id)
+	if randi_range(0, 1) == 1:
+		pool.erase(fb_ingestion_id)
+	else:
+		pool.erase(tooth_fracture_id)
+	
+	pool.shuffle()
+	injury_count = mini(injury_count, pool.size())
+	for i in injury_count:
+		injuries.append(pool[i])
+	injured = true
+	print(injuries.size())
+	
 #TRUE: Success at removal, FALSE: You fucked up
 func _remove_injury(injury_id: int) -> bool:
 	if (injuries.has(injury_id)):

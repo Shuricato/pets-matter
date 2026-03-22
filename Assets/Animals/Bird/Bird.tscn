@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://crsi40s0he6pb"]
 
 [ext_resource type="Texture2D" uid="uid://bdd63uj5otqgs" path="res://Assets/Animals/Bird/Bird.tres" id="1_x2ajm"]
-[ext_resource type="Script" uid="uid://dmekxnq6m5n3c" path="res://Assets/Animals/Cat/cat_script.gd" id="2_yitni"]
+[ext_resource type="Script" uid="uid://kbnur8023hbe" path="res://Assets/Animals/Bird/bird_script.gd" id="2_x2ajm"]
 [ext_resource type="Texture2D" uid="uid://bhjyavcpxvuhy" path="res://Assets/Animals/Bird/Overgrown_claws.tres" id="3_x2ajm"]
 [ext_resource type="Texture2D" uid="uid://b7c3k27jc4kns" path="res://Assets/Animals/Bird/Overgrown_beak.tres" id="4_p5uoe"]
 [ext_resource type="Texture2D" uid="uid://dq70tkma0payr" path="res://Assets/Animals/Bird/Pin_feather.tres" id="5_x2ajm"]
@@ -10,7 +10,7 @@
 
 [node name="Bird" type="Sprite2D"]
 texture = ExtResource("1_x2ajm")
-script = ExtResource("2_yitni")
+script = ExtResource("2_x2ajm")
 injury_overlay_nodes = Array[NodePath]([NodePath("Overgrown claws"), NodePath("Overgrown beak"), NodePath("Bleeding pin feather"), NodePath("Nutritional deficiency"), NodePath("Eye infection")])
 
 [node name="Overgrown claws" type="Sprite2D" parent="."]

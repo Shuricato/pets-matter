@@ -1,6 +1,6 @@
 extends Node2D
 
-var Cat = preload("res://Assets/Animals/Cat/Cat.tscn")
+var Cat = preload("res://Assets/Animals/Bird/Bird.tscn")
 var new_dog
 
 # Called when the node enters the scene tree for the first time.

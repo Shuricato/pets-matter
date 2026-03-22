@@ -15,7 +15,7 @@ func _generate_injuries() -> void:
 	injuries.clear()
 	var injury_count = randi_range(1, 5)
 	while injuries.size() < injury_count:
-		var injury_id = randi_range(0, injuries.size()-1)
+		var injury_id = randi_range(0, 4)
 		if !injuries.has(injury_id):
 			injuries.append(injury_id)
 	injured = true
