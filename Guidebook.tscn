@@ -2,6 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://bprqkrn2ax61d" path="res://Assets/Menu items/Arrow.tres" id="1_mykmv"]
 [ext_resource type="Script" uid="uid://cy8yiy02kbdwg" path="res://guidebook.gd" id="1_nai0m"]
+[ext_resource type="FontFile" uid="uid://bgc1i234tk8ev" path="res://Assets/PatrickHand-Regular.ttf" id="2_x5s8b"]
+
+[sub_resource type="Animation" id="Animation_3rty8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_x5s8b"]
 resource_name = "slide_in"
@@ -19,21 +35,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-550, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_3rty8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ai1a"]
 _data = {
 &"RESET": SubResource("Animation_3rty8"),
@@ -42,8 +43,6 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nai0m"]
 bg_color = Color(0.3529412, 0.48235294, 0.6392157, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nai0m"]
 
 [node name="Guidebook" type="Control"]
 z_index = 10
@@ -68,44 +67,43 @@ offset_right = 539.19
 offset_bottom = 482.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nai0m")
 
-[node name="TabContainer" type="TabContainer" parent="Control/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
 layout_mode = 0
-offset_right = 540.0
-offset_bottom = 480.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_nai0m")
-current_tab = 0
-
-[node name="Dog" type="Control" parent="Control/Panel/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/TabContainer/Dog"]
-layout_mode = 0
-offset_left = 24.809998
-offset_top = 16.0
-offset_right = 511.81
-offset_bottom = 291.0
+offset_left = 20.809998
+offset_top = 18.0
+offset_right = 519.81
+offset_bottom = 463.0
+theme_override_fonts/normal_font = ExtResource("2_x5s8b")
 bbcode_enabled = true
-text = "[b]Bold text[/b]
-[i]Italic text[/i]
-[color=red]Red text[/color]
-[color=#ff8800]Hex color[/color]
-[font_size=24]Big text[/font_size]
-[center]Centered[/center]
-[right]Right aligned[/right]
-[u]Underlined[/u]
-[s]Strikethrough[/s]
-[code]Monospace[/code]"
-
-[node name="Cat" type="Control" parent="Control/Panel/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Cockatiel" type="Control" parent="Control/Panel/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
+text = "[b]Ear infection[/b]
+Ear infections are quite common for dogs with floppy ears or long fur. Those dogs require regular ear cleaning to get rid of any debris and moisture. Odor and discharge from the ear is a clear sign of an infection. Some ear drops should clear it right up.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Dental Disease / Tooth Fracture[/b]
+It begins due to plaque forming on top of the teeth — a film of bacteria and food sticking to the teeth due to poor oral hygiene. Yes, your pet needs to take care of its teeth too! And it's up to you. Tooth brushing or teeth-healthy chewing toys can prevent your pet from losing some teeth. But if it came to the point of a vet visit, it might be necessary for a tooth extraction.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Eye infection[/b]
+Dust, smoke, shampoo, and many other things can be very irritating to an animal's eyes. Breeds with a more [i]droopy[/i] face — such as pugs or Persians — are often more prone to infections due to poor tear drainage.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Abrasion[/b]
+Tumbles on pavement, scraping against plants, or sliding on a carpet and getting a burn — animals can be just as clumsy as us. Some bandage will help.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Cut Paw Pads[/b]
+Glass, hot pavement, sharp rocks — even during a walk around the neighbourhood your pet can get their paws seriously hurt. Remember that they walk barefoot, and you should look out for them! Some bandage will help.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Foreign Body Ingestion[/b]
+Cats have a strong hunting instinct. A piece of string or rubber bands can often mimic the movement of prey. If you suspect that something was swallowed, bring your pet to the vet right away. Forceps or surgery might be required.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Obesity[/b]
+Overfeeding your pet is very common, and once a pet gets too large, many health issues can follow. It can be avoided with a better diet and by measuring the amount of food to fit your pet's needs.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Overgrown Claws / Beak[/b]
+A parrot's beak and claws continuously grow throughout its life. In the wild, parrots spend hours chewing on wood and foraging, but in your home they might need some help. Bring your parrot for a professional trimming if you notice struggles with walking or eating.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Bleeding Pin Feather[/b]
+If a developing feather is damaged, it will start to bleed. Birds have a very small blood volume, so even slight bleeding can put them into shock. Using some cornstarch can help develop a clot; having to pull out the feather is a last-resort scenario.
+[color=#f0f0f0]──────────────────────────────────────────────────[/color]
+[b]Nutritional Deficiency[/b]
+Parrots need far more in their diets than just seed mixes. It's very common to find misinformation that says otherwise, resulting in deficiencies. It can be spotted by poor feather quality, nasal discharge, or even muscle loss."
 
 [node name="TextureButton" type="TextureButton" parent="Control"]
 layout_mode = 0

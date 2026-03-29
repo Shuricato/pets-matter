@@ -2,8 +2,10 @@ extends Sprite2D
 
 var injuries: Array = []
 var injured: bool = false
+var fat: bool = false
 var injuredSprite = preload("res://Assets/Animals/Cat/Cat_injured.tres")
 var healthySprite = preload("res://Assets/Animals/Cat/Cat.tres")
+var healtyhSprite_Fat = preload("res://Assets/Animals/Cat/Cured_Obesity.tres")
 
 var conditions: Dictionary = {
 	"fat": 0,
@@ -30,6 +32,7 @@ func _generate_injuries() -> void:
 	if randi_range(0, 1) == 1:
 		injuries.append(obesity_id)
 		injured = true
+		fat = true
 		return
 
 	pool.erase(obesity_id)
@@ -67,10 +70,16 @@ func _update_visuals() -> void:
 			overlay.visible = injuries.has(i)
 	if (injured):
 		texture = injuredSprite
+	elif (!injured and fat):
+		texture = healtyhSprite_Fat
+		await get_tree().create_timer(4).timeout
+		_set_no_animal()
 	else: 
 		texture = healthySprite
 		await get_tree().create_timer(4).timeout
 		_set_no_animal()
 
+signal cured
 func _set_no_animal() -> void:
+	cured.emit()
 	self.queue_free()

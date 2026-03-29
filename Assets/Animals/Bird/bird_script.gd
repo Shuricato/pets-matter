@@ -55,5 +55,7 @@ func _update_visuals() -> void:
 		await get_tree().create_timer(4).timeout
 		_set_no_animal()
 
+signal cured
 func _set_no_animal() -> void:
+	cured.emit()
 	self.queue_free()

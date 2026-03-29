@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://fknv7w8s7xyq"]
 
-[ext_resource type="Texture2D" uid="uid://c7d1lma7l6xw0" path="res://Assets/Animals/Cat/Cat.tres" id="1_qs81d"]
+[ext_resource type="Texture2D" uid="uid://bpm700s4ksvf6" path="res://Assets/Animals/Cat/Cured_Obesity.tres" id="1_qs81d"]
 [ext_resource type="Script" uid="uid://dmekxnq6m5n3c" path="res://Assets/Animals/Cat/cat_script.gd" id="2_qs81d"]
 [ext_resource type="Texture2D" uid="uid://gn25bahm7mmn" path="res://Assets/Animals/Cat/Cut_paw.tres" id="3_1tpdm"]
 [ext_resource type="Texture2D" uid="uid://oybdyhapnwll" path="res://Assets/Animals/Cat/Tooth_fracture.tres" id="4_7vw31"]
@@ -16,7 +16,6 @@ fb_ingestion_id = 1
 tooth_fracture_id = 2
 
 [node name="Obesity" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(17, -7)
 texture = ExtResource("7_1tpdm")
 

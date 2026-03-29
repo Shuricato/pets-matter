@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://csudclo1mffm0"]
+
+[ext_resource type="Script" uid="uid://b3idwqxb475ak" path="res://dialogue_button.gd" id="1_nsd07"]
+[ext_resource type="FontFile" uid="uid://baidkfvqvhsil" path="res://Assets/Nunito-VariableFont_wght.ttf" id="2_7mnm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsd07"]
+bg_color = Color(0.6745098, 0.5176471, 0.627451, 0.9019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mnm1"]
+bg_color = Color(0.5921569, 0.44705883, 0.5529412, 0.6666667)
+
+[sub_resource type="FontVariation" id="FontVariation_q4nkq"]
+base_font = ExtResource("2_7mnm1")
+variation_opentype = {
+2003265652: 600
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsd07")
+dialogue = ["\"Welcome to CareClinic Veterinary Office.\"", "\"You've been part of the team for some time now, learning the ropes and preparing for this moment.\"", "\"Today marks a big step — your very first day handling patients on your own.\"", "\"The clinic is quiet… a little too quiet.\"", "\"You're the only one here today.\"", "\"But don't let that shake your confidence — someone thoughtfully left behind a notebook filled with everything you might need.\"", "\"Your patients will be arriving soon.\"", "\"Take a breath, trust your instincts… and get to work.\""]
+
+[node name="DialogueButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+shortcut_feedback = false
+flat = true
+
+[node name="DialogueBox" type="Panel" parent="DialogueButton"]
+z_index = 10
+layout_mode = 0
+offset_left = 2.0
+offset_top = 388.0
+offset_right = 1149.0
+offset_bottom = 648.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsd07")
+
+[node name="Panel2" type="Panel" parent="DialogueButton/DialogueBox"]
+z_index = 10
+layout_mode = 0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 1130.0
+offset_bottom = 242.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mnm1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueButton/DialogueBox/Panel2"]
+layout_mode = 0
+offset_right = 1110.0
+offset_bottom = 221.0
+theme_override_colors/default_color = Color(0.49803922, 0.17254902, 0.1764706, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_q4nkq")
+theme_override_font_sizes/normal_font_size = 32
+text = "sdfasdfasdf"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="DialogueButton"]
+z_index = 9
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[connection signal="pressed" from="DialogueButton" to="." method="_on_pressed"]

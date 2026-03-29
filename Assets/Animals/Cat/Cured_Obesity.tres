@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bpm700s4ksvf6"]
+
+[ext_resource type="Texture2D" uid="uid://ba8eivons6a8m" path="res://Assets/Animals/Cat/cured_fat.png" id="1_3njll"]
+
+[resource]
+atlas = ExtResource("1_3njll")
+region = Rect2(906.256, 528.467, 648.061, 728.246)
