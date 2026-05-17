@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pwiy5dekca4n"]
+
+[ext_resource type="Texture2D" uid="uid://4upf17fkbuhu" path="res://Assets/heart_particle.tres" id="1_22q8q"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gmjff"]
+particle_flag_disable_z = true
+angle_min = -29.99999
+angle_max = 20.000011
+direction = Vector3(0, -50, 0)
+spread = 50.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_min = 0.14
+scale_max = 0.14
+
+[node name="Node2D" type="GPUParticles2D"]
+amount = 2
+texture = ExtResource("1_22q8q")
+process_material = SubResource("ParticleProcessMaterial_gmjff")

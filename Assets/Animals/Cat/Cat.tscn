@@ -40,3 +40,6 @@ texture = ExtResource("4_7vw31")
 visible = false
 position = Vector2(216, -36)
 texture = ExtResource("5_ddx8e")
+
+[node name="Head position" type="Node2D" parent="."]
+position = Vector2(173, -351)

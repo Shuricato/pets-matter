@@ -14,24 +14,32 @@ script = ExtResource("2_iyfei")
 injury_overlay_nodes = Array[NodePath]([NodePath("Hurt paw"), NodePath("Ear infection"), NodePath("Eye injury"), NodePath("Abrasion"), NodePath("Dental disease")])
 
 [node name="Hurt paw" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(198.00002, 501)
 scale = Vector2(0.9503817, 0.9848485)
 texture = ExtResource("3_cnnkt")
 
 [node name="Ear infection" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(323, -431.99997)
 scale = Vector2(0.8333333, 0.9016736)
 texture = ExtResource("4_m38ty")
 
 [node name="Eye injury" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(153, -417)
 scale = Vector2(0.9354839, 0.9411765)
 texture = ExtResource("5_7cwfj")
 
 [node name="Abrasion" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(283, 273)
 texture = ExtResource("6_iph5e")
 
 [node name="Dental disease" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(186, -291)
 texture = ExtResource("7_dhd6c")
+
+[node name="Head position" type="Node2D" parent="."]
+position = Vector2(205, -589)

@@ -19,5 +19,4 @@ func next() -> void:
 		self.queue_free()
 
 func _on_pressed() -> void:
-	print("PRessed")
 	next()

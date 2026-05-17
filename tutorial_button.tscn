@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckvc2ra2t5bvh"]
+
+[ext_resource type="Script" uid="uid://bydj3gstqwtjw" path="res://tutorial_button.gd" id="1_e2r0n"]
+[ext_resource type="Texture2D" uid="uid://b4v5fqhigimlf" path="res://Assets/Menu items/Tut_bg.tres" id="2_tfc3c"]
+[ext_resource type="Texture2D" uid="uid://dkgwxw58isei4" path="res://Assets/Menu items/Tut_arrow.tres" id="3_focxw"]
+[ext_resource type="FontFile" uid="uid://baidkfvqvhsil" path="res://Assets/Nunito-VariableFont_wght.ttf" id="3_h114a"]
+[ext_resource type="Texture2D" uid="uid://d3laglqppxq0p" path="res://Assets/Menu items/Buttons/Question_button.tres" id="5_h114a"]
+
+[sub_resource type="FontVariation" id="FontVariation_ocwxg"]
+base_font = ExtResource("3_h114a")
+variation_opentype = {
+2003265652: 500
+}
+
+[node name="Tutorial_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2r0n")
+
+[node name="TutorialButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+shortcut_feedback = false
+flat = true
+
+[node name="Panel" type="Panel" parent="TutorialButton"]
+z_index = 9
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Control" type="Control" parent="TutorialButton/Panel"]
+anchors_preset = 0
+offset_left = 314.0
+offset_top = 219.0
+offset_right = 354.0
+offset_bottom = 259.0
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton/Panel/Control"]
+z_index = 10
+layout_mode = 0
+offset_right = 234.0
+offset_bottom = 81.0
+texture = ExtResource("2_tfc3c")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TutorialButton/Panel/Control/TextureRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 232.0
+offset_bottom = 80.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_ocwxg")
+theme_override_font_sizes/normal_font_size = 18
+text = "Welcome! 
+To let your first patient in, click the door"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect2" type="TextureRect" parent="TutorialButton/Panel/Control"]
+z_index = 10
+layout_mode = 0
+offset_left = -95.0
+offset_top = 14.0
+offset_right = -4.0
+offset_bottom = 71.0
+texture = ExtResource("3_focxw")
+expand_mode = 2
+flip_h = true
+
+[node name="Control2" type="Control" parent="TutorialButton/Panel"]
+anchors_preset = 0
+offset_left = 649.0
+offset_top = 193.0
+offset_right = 689.0
+offset_bottom = 233.0
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton/Panel/Control2"]
+z_index = 10
+layout_mode = 0
+offset_right = 234.0
+offset_bottom = 105.0
+texture = ExtResource("2_tfc3c")
+expand_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TutorialButton/Panel/Control2/TextureRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 232.0
+offset_bottom = 80.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_ocwxg")
+theme_override_font_sizes/normal_font_size = 18
+text = "These are your tools! 
+Pick the right one to treat each animal
+Correct choices give score!"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect2" type="TextureRect" parent="TutorialButton/Panel/Control2"]
+z_index = 10
+layout_mode = 0
+offset_left = 88.0
+offset_top = -3.0
+offset_right = 179.0
+offset_bottom = 54.0
+rotation = -1.5707964
+texture = ExtResource("3_focxw")
+expand_mode = 2
+
+[node name="Control3" type="Control" parent="TutorialButton/Panel"]
+anchors_preset = 0
+offset_left = 805.0
+offset_top = 301.0
+offset_right = 845.0
+offset_bottom = 341.0
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton/Panel/Control3"]
+z_index = 10
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 203.0
+offset_bottom = 111.0
+texture = ExtResource("2_tfc3c")
+expand_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TutorialButton/Panel/Control3/TextureRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 196.0
+offset_bottom = 80.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_ocwxg")
+theme_override_font_sizes/normal_font_size = 18
+text = "If in doubt, consult the guide about what injury it could be"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect2" type="TextureRect" parent="TutorialButton/Panel/Control3"]
+z_index = 10
+layout_mode = 0
+offset_left = 206.0
+offset_top = 40.0
+offset_right = 297.0
+offset_bottom = 97.0
+texture = ExtResource("3_focxw")
+expand_mode = 2
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 20.0
+offset_right = 490.0
+offset_bottom = 90.0
+
+[node name="Question" type="TextureRect" parent="Button"]
+z_index = 10
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("5_h114a")
+expand_mode = 2
+
+[connection signal="pressed" from="TutorialButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_exit_pressed"]

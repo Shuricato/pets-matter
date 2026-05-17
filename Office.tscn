@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dklqhiwsqmrf"]
+[gd_scene load_steps=24 format=3 uid="uid://dklqhiwsqmrf"]
 
 [ext_resource type="Script" uid="uid://cu17qnx8re600" path="res://office.gd" id="1_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://c2gj3sccqy6b6" path="res://Assets/Backgrounds/Vet_office_background.png" id="1_ua801"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://c2uauusxasgag" path="res://Assets/Office items/Door_closed.tres" id="15_4fm71"]
 [ext_resource type="FontFile" uid="uid://baidkfvqvhsil" path="res://Assets/Nunito-VariableFont_wght.ttf" id="16_yauhp"]
 [ext_resource type="PackedScene" uid="uid://csudclo1mffm0" path="res://dialogue_button.tscn" id="17_gisrx"]
+[ext_resource type="Texture2D" uid="uid://d3laglqppxq0p" path="res://Assets/Menu items/Buttons/Question_button.tres" id="18_grpir"]
+[ext_resource type="PackedScene" uid="uid://ckvc2ra2t5bvh" path="res://tutorial_button.tscn" id="19_3080y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gisrx"]
 bg_color = Color(0.6745098, 0.5176471, 0.627451, 1)
@@ -90,10 +92,12 @@ theme_override_constants/separation = 50
 [node name="Bandage" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Bandages"
 
 [node name="Bandage" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Bandage"]
 layout_mode = 0
-offset_right = 69.0
+offset_left = 1.0
+offset_right = 70.0
 offset_bottom = 69.0
 texture = ExtResource("6_r1f8t")
 expand_mode = 2
@@ -101,6 +105,7 @@ expand_mode = 2
 [node name="Pliers" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Pliers"
 
 [node name="Pliers" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Pliers"]
 layout_mode = 0
@@ -112,6 +117,7 @@ expand_mode = 2
 [node name="Eye drops" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Eye drops"
 
 [node name="Eye drops" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Eye drops"]
 layout_mode = 0
@@ -123,6 +129,7 @@ expand_mode = 2
 [node name="Ear drops" type="TextureButton" parent="ItemShelf/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Ear drops"
 
 [node name="Ear drops" type="TextureRect" parent="ItemShelf/MarginContainer/HBoxContainer/Ear drops"]
 custom_minimum_size = Vector2(69, 69)
@@ -175,6 +182,7 @@ theme_override_constants/separation = 50
 [node name="Corn starch" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Corn starch"
 
 [node name="Corn starch" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Corn starch"]
 layout_mode = 0
@@ -186,6 +194,7 @@ expand_mode = 2
 [node name="Forceps" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Forceps"
 
 [node name="Forceps" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Forceps"]
 layout_mode = 0
@@ -197,6 +206,7 @@ expand_mode = 2
 [node name="Diet" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Send them on a diet"
 
 [node name="Diet" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Diet"]
 layout_mode = 0
@@ -208,6 +218,7 @@ expand_mode = 2
 [node name="Clippers" type="TextureButton" parent="ItemShelf2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(69, 69)
 layout_mode = 2
+tooltip_text = "Clippers"
 
 [node name="Clippers" type="TextureRect" parent="ItemShelf2/MarginContainer/HBoxContainer/Clippers"]
 layout_mode = 0
@@ -253,20 +264,28 @@ label_settings = SubResource("LabelSettings_yauhp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 420.0
+offset_top = 20.0
+offset_right = 490.0
+offset_bottom = 90.0
+
+[node name="Question" type="TextureRect" parent="Button"]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("18_grpir")
+expand_mode = 2
+
 [node name="DialogueButton" parent="." instance=ExtResource("17_gisrx")]
 visible = false
 
-[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Bandage" to="." method="_on_bandage_pressed"]
-[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Pliers" to="." method="_on_pliers_pressed"]
-[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Eye drops" to="." method="_on_eye_drops_pressed"]
-[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Ear drops" to="." method="_on_ear_drops_pressed"]
-[connection signal="mouse_entered" from="SwapButton" to="." method="_on_swap_mouse_entered" binds= [NodePath("SwapTexture")]]
+[node name="Tutorial_button" parent="." instance=ExtResource("19_3080y")]
+visible = false
+
 [connection signal="mouse_exited" from="SwapButton" to="." method="_on_swap_mouse_exited"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]
-[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Corn starch" to="." method="_on_corn_starch_pressed"]
-[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Forceps" to="." method="_on_forceps_pressed"]
-[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Diet" to="." method="_on_diet_pressed"]
-[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Clippers" to="." method="_on_clippers_pressed"]
 [connection signal="mouse_entered" from="Door" to="." method="_on_door_mouse_entered"]
 [connection signal="mouse_exited" from="Door" to="." method="_on_door_mouse_exited"]
 [connection signal="pressed" from="Door" to="." method="_on_door_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_tutorial_pressed"]

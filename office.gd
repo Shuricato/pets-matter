@@ -3,6 +3,7 @@ extends Node2D
 var Cat = preload("res://Assets/Animals/Cat/Cat.tscn")
 var Dog = preload("res://Assets/Animals/Dog/Dog.tscn")
 var Bird = preload("res://Assets/Animals/Bird/Bird.tscn")
+var scribble = preload("res://scribble_particle.tscn")
 var new_dog
 var spawned: bool = false
 @onready var shelf_1 = $ItemShelf
@@ -11,7 +12,6 @@ var spawned: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$DialogueButton.visible = true
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,6 +24,23 @@ func add_score(points: int) -> void:
 
 func reset_score() -> void:
 	score = 0
+	
+func wrong_button(button: NodePath) -> void:
+	var particles = scribble.instantiate()
+	var pos = get_node(button)
+
+	# Add to the scene (as child of current node, or use get_tree().root)
+	add_child(particles)
+
+	# Set position to match the sprite
+	particles.global_position = pos.global_position
+	particles.global_position += Vector2(35,35)
+
+	particles.lifetime = 0.15
+	
+	# Auto-clean up after particles finish
+	await get_tree().create_timer(particles.lifetime*4).timeout
+	particles.queue_free()
 
 func _on_door_pressed() -> void:
 	var animal = randi_range(0,2)
@@ -76,61 +93,73 @@ func _on_swap_button_pressed() -> void:
 		shelf_1.visible = true
 		shelf_2.visible = false
 
-func _on_bandage_pressed() -> void:
+func _on_bandage_pressed(button) -> void:
 	if new_dog:
 		if (new_dog._remove_injury("abrasion") or new_dog._remove_injury("paw")):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_pliers_pressed() -> void:
+func _on_pliers_pressed(button) -> void:
 	if new_dog:
 		if new_dog._remove_injury("tooth"):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_eye_drops_pressed() -> void:
+func _on_eye_drops_pressed(button) -> void:
 	if new_dog:
 		if new_dog._remove_injury("eye"):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_ear_drops_pressed() -> void:
+func _on_ear_drops_pressed(button) -> void:
 	if new_dog:
 		if new_dog._remove_injury("ear"):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_corn_starch_pressed() -> void:
+func _on_corn_starch_pressed(button) -> void:
 	if new_dog:
 		if new_dog._remove_injury("pin feather"):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_forceps_pressed() -> void:
+func _on_forceps_pressed(button) -> void:
 	if new_dog:
 		if new_dog._remove_injury("ingestion"):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_diet_pressed() -> void:
+func _on_diet_pressed(button) -> void:
 	if new_dog:
 		if new_dog._remove_injury("fat"):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
 
-func _on_clippers_pressed() -> void:
+func _on_clippers_pressed(button) -> void:
 	if new_dog:
 		if (new_dog._remove_injury("claws") or new_dog._remove_injury("beak")):
 			score = score +100
 		else:
 			score = score -100
+			wrong_button(button)
+			
+func _on_tutorial_pressed() -> void:
+	$Tutorial_button.show()
+	pass
 
 func _on_swap_mouse_entered(button_p) -> void:
 	$SwapButton/SwapTexture.modulate = Color(1.2, 1.2, 1.2)
