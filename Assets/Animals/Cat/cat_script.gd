@@ -120,12 +120,12 @@ func _update_visuals() -> void:
 	elif (!injured and fat):
 		spawn_particles_at_head()
 		texture = healtyhSprite_Fat
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(3).timeout
 		_set_no_animal()
 	else: 
 		spawn_particles_at_head()
 		texture = healthySprite
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(3).timeout
 		_set_no_animal()
 
 signal cured

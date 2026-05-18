@@ -283,8 +283,16 @@ visible = false
 [node name="Tutorial_button" parent="." instance=ExtResource("19_3080y")]
 visible = false
 
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Bandage" to="." method="_on_bandage_pressed" binds= [NodePath("ItemShelf/MarginContainer/HBoxContainer/Bandage")]]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Pliers" to="." method="_on_pliers_pressed" binds= [NodePath("ItemShelf/MarginContainer/HBoxContainer/Pliers")]]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Eye drops" to="." method="_on_eye_drops_pressed" binds= [NodePath("ItemShelf/MarginContainer/HBoxContainer/Eye drops")]]
+[connection signal="pressed" from="ItemShelf/MarginContainer/HBoxContainer/Ear drops" to="." method="_on_ear_drops_pressed" binds= [NodePath("ItemShelf/MarginContainer/HBoxContainer/Ear drops")]]
 [connection signal="mouse_exited" from="SwapButton" to="." method="_on_swap_mouse_exited"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Corn starch" to="." method="_on_corn_starch_pressed" binds= [NodePath("ItemShelf2/MarginContainer/HBoxContainer/Corn starch")]]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Forceps" to="." method="_on_forceps_pressed" binds= [NodePath("ItemShelf2/MarginContainer/HBoxContainer/Forceps")]]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Diet" to="." method="_on_diet_pressed" binds= [NodePath("ItemShelf2/MarginContainer/HBoxContainer/Diet")]]
+[connection signal="pressed" from="ItemShelf2/MarginContainer/HBoxContainer/Clippers" to="." method="_on_clippers_pressed" binds= [NodePath("ItemShelf2/MarginContainer/HBoxContainer/Clippers")]]
 [connection signal="mouse_entered" from="Door" to="." method="_on_door_mouse_entered"]
 [connection signal="mouse_exited" from="Door" to="." method="_on_door_mouse_exited"]
 [connection signal="pressed" from="Door" to="." method="_on_door_pressed"]
